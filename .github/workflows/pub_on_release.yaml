@@ -15,7 +15,7 @@ jobs:
           python-version: '3.8'
           architecture: 'x64'
       - name: Install requirements
-        run: pip install -r test_wbot/requirements.txt
+        run: pip install -r requirements.txt
       - name: Run tests
         run: python tests.py
         shell: bash {0}
