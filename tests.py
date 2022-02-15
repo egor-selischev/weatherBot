@@ -1,20 +1,19 @@
 import unittest
-import config
-from main import get_weather, get_location
-
 
 class TgBotTests(unittest.TestCase):
 
+    def test_get_location(self):
+        from main import get_location
+        self.assertIsNotNone(get_location('88', '77'))
+
     def test_owm_token_is_exists(self):
+        import config
         self.assertIsNotNone(config.TOKEN)
 
     def test_get_weather(self):
         with self.assertRaises(Exception):
-            get_weather("вв")
+           from main import get_weather
+           get_weather("вв")
 
-    def test_get_location(self):
-        self.assertIsNotNone(get_location('88', '77'))
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
